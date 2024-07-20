@@ -295,13 +295,10 @@ footer {
   justify-content: space-around; 
   width: 50%; 
 }
-
 .principal-paso1, .principal-paso2, .principal-paso3, .principal-paso4 {
   width: 50%;
   text-align: center;   
 }
-
-
 @media only screen and (max-width: 768px) {
   .hero-img img{
     width: 60%;
@@ -311,8 +308,6 @@ footer {
   .hero-text{
     margin-top: 80px;
   }
-
-
   .hero{
     grid-template-columns: 1fr;
     padding: 15px;
@@ -343,8 +338,6 @@ footer {
     flex-direction: column;
   }
 }
-
-
 @media only screen and (max-width: 500px) {
   .hero-img{
     width: 60%;
@@ -470,10 +463,5 @@ footer {
     padding-right: 5px;
     padding-left: 5px;
   }
-  .latest-game-card{
-    width: 100%;
-    max-width: 300px;
-    color: #0f141b;
-  }
-
+ 
 }
