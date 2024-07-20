@@ -20,22 +20,6 @@
   transition: all 0.5s linear;
   opacity: 0;
 }
-.hero
-.avatar {
-  height: 40px;
-  width: 40px;
-  background-size: cover !important;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.timestamp {
-  font-size: 10px;
-  font-weight: 300;
-  text-align: right;
-  margin-top: 5px;
-}
-
 .message.appeared {
   opacity: 1;
 }
