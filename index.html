@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="spanish">
+  <head>
+    <title>Find Your Game</title>
+    <meta name="description" content="encuentra tu juego con ia" />
+    <meta property="og:title" content="Find Your Game" />
+    <meta property="og:description" content="encuentra tu juego con ia" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,600&family=Permanent+Marker&family=Poppins:wght@300;400;500;600;700;900&family=REM:ital,wght@0,100;0,300;0,400;0,500;1,700&display=swap" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  </head>
+  <body>
+      <div id="principal" class="principal-container">
+        <header>
+          <a class="logo">FYG</a>
+        </header>
+        <section class="hero">
+          <div class="hero-text">
+            <h4>¿Te gustan los videojuegos?</h4>
+            <h1>Encuentralo con IA</h1>
+            <p>
+              Con nuestra herramienta de IA, podrás explorar juegos para ti,<br />
+              basado en tu perfil de jugador y tus gustos.
+            </p>
+          </div>
+          <div class="hero-img">
+            <img src="img/MP.png" />
+          </div>
+        </section>
+        <div class="scroll-down">
+          <a href="#"><i class="ri-arrow-drop-down-line"></i></a>
+        </div>
+        <div class="principal-primeros-pasos">
+          <h1 class="principal-primeros-pasos-titulo">
+            Descubre el juego perfecto para ti
+          </h1>
+          <div class="principal-div-primeros-pasos">
+            <div class="principal-pasos-parte1">
+              <div class="principal-paso1">
+                <h1 class="principal-paso1-numero">1</h1>
+                <h1 class="principal-paso1-titulo">
+                  Habla con nuestro ChatBot
+                </h1>
+                <span class="principal-paso1-texto">
+                  <span>Ve a la parte final y descubre nuestro ChatBot</span>
+                  <br />
+                </span>
+              </div>
+              <div class="principal-paso2">
+                <h1 class="principal-paso2-numero">2</h1>
+                <h1 class="principal-paso2-titulo">Responde sus preguntas</h1>
+                <span class="principal-paso3-texto">
+                  <span>Te hara unas breves preguntas, respondelas</span>
+                  <br />
+                </span>
+              </div>
+            </div>
+            <div class="principal-pasos-parte2">
+              <div class="principal-paso3">
+                <h1 class="principal-paso3-numero"><span>3</span></h1>
+                <h1 class="principal-paso3-titulo">Descubre los juegos</h1>
+                <span class="principal-paso3-texto1">
+                  <span>Listo, ya tienes tu lista de juegos</span>
+                  <br />
+                </span>
+              </div>
+              <div class="principal-paso4">
+                <h1 class="principal-paso4-numero"><span>4</span></h1>
+                <h1 class="principal-paso4-titulo">¡Y a jugar!</h1>
+                <span class="principal-paso4-texto">
+                  <span>Ahora eligue una de las 4 opciones que te ofrece</span>
+                  <br />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CHATBOT-->
+        <div class="principal-div-top-juegos">
+          <h1 class="principal-titulo-juegos">
+            <h1 id="principal-text062" class="principal-text062">
+              Descubre tu juego ideal con nuestro ChatBot
+            </h1>
+          </h1>
+          <div id="ChatBot_FYG" class="col-md-5">
+            <div class="chat_window">
+              <ul class="messages">
+                <li class="message left appeared"></li>
+              </ul>
+              <p id="question"></p>
+              <div id="options"></div>
+              <div class="bottom_wrapper">
+                <input
+                  id="msg_input"
+                  placeholder="Para iniciar el chat di hola :D"
+                />
+                <div id="send_button" class="app_button_1">Enviar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="principal-stats">
+          <div class="principal-stat">
+            <h1 class="principal-text082">1</h1>
+            <span class="principal-text083">Desarrollador</span>
+            <span class="principal-text084">
+              Estudiante de ingenieria de sistemas
+            </span>
+          </div>
+          <div class="principal-stat1">
+            <h1 class="principal-text085">16</h1>
+            <span class="principal-text086">Juegos recomendables</span>
+            <span class="principal-text087">
+              Si se usa la API de GPT se podran recomendar mas de 50 juegos
+            </span>
+          </div>
+          <div class="principal-stat2">
+            <h1 class="principal-text088">
+              <span>2</span>
+            </h1>
+            <span class="principal-text091">Horas de desarrollo</span>
+            <span class="principal-text092">
+              Solo un par de horas para realizar este proyecto
+            </span>
+          </div>
+          <div class="principal-stat3">
+            <h1 class="principal-text093">100%</h1>
+            <span class="principal-text094">Fe</span>
+            <span class="principal-text095">
+               Proyecto universitario que espero me de puntos extras
+            </span>
+          </div>
+        </div>
+        <section class="section latest-game" aria-label="latest game">
+          <div class="container">
+            <h2 class="h2 section-title">
+              Juega, prueba & <span class="span">Diviertete</span>
+            </h2>
+            <div class="slider" id="slider">
+            <ul class="has-scrollbar" id="ul-recomendations">
+            </ul>
+            </div>
+          </div>
+        </section>
+        <div class="principal-banner">
+          <span class="principal-text096">
+          
+         <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const recomendations = JSON.parse(localStorage.getItem('recomendaciones')) || [];
+              const ulRecomendations = document.getElementById('ul-recomendations');
+
+              recomendations.forEach(element => {
+                const newItem = `
+                  <li class="scrollbar-item">
+                    <div class="latest-game-card">
+                      <figure class="card-banner img-holder" style="--width: 400; --height: 470;">
+                        <img src="${element.url}" width="300" height="370" loading="lazy"
+                          alt="${element.name}" class="img-cover">
+                      </figure>
+                      <div class="card-content">
+                        <h3 class="h3">
+                          <a href="#" class="card-title">${element.name}</a>
+                        </h3>
+                      </div>
+                    </div>
+                  </li>
+                `;
+                ulRecomendations.innerHTML += newItem;
+              });
+  });
+</script>
+
+<footer><h3>DISFRUTA LOS JUEGOS</h3></footer>
+</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="script/chatbot.js"></script>
+  </body>
+</html>

@@ -1,0 +1,505 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.messages {
+  position: relative;
+  padding: 20px 10px 0;
+  height: 500px;
+  overflow: scroll;
+}
+
+.message {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all 0.5s linear;
+  opacity: 0;
+}
+.hero
+.avatar {
+  height: 40px;
+  width: 40px;
+  background-size: cover !important;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.timestamp {
+  font-size: 10px;
+  font-weight: 300;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.message.appeared {
+  opacity: 1;
+}
+
+.text_wrapper {
+  display: inline-block;
+  padding: 20px;
+  border-radius: 6px;
+  min-width: 750px;
+  position: relative;
+  margin-left: 20px; 
+  background-color: #c6c6f6; 
+}
+
+.text_wrapper::after,
+.text_wrapper::before {
+  top: 18px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-width: 13px; 
+}
+
+.text_wrapper::before {
+  border-width: 15px;
+  margin-top: -2px;
+}
+
+.message.left .avatar {
+  float: left;
+  background: url("./img/bot.jpg");
+}
+
+.message.right .avatar {
+  float: right;
+  background: url("./img/guy.jpg");
+}
+
+.message.right .text_wrapper {
+  background-color: #b0d4f3;
+  margin-right: 20px;
+  float: right;
+}
+
+.message.left .text_wrapper::after,
+.message.right .text_wrapper::after {
+  border-color: transparent;
+}
+
+.message.left .text_wrapper::after {
+  right: 100%;
+  border-right-color: #c6c6f6;
+}
+
+.message.right .text_wrapper::after {
+  left: 100%;
+  border-left-color: #b0d4f3;
+}
+
+.message.left .timestamp {
+  color: white;
+}
+
+.message.right .timestamp {
+  color: #1a5770;
+}
+
+.bottom_wrapper {
+  background-color: #fff;
+  padding: 20px;
+  bottom: 0;
+  display: flex;
+}
+
+#msg_input {
+  flex-grow: 1;
+  outline-width: 0;
+  padding: 12px;
+  border: 1px solid #bcbdc0;
+  border-radius: 50px;
+  margin-right: 15px;
+}
+
+.app_button_1 {
+  width: 140px;
+  background-color: #c6c6f6;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.options-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.option-button {
+  margin: 5px;
+}
+
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 33px 9%;
+  background: transparent;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
+.hero {
+  height: 105vh;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(245.59deg, #091d25 0%, #0f141b 28.53%, #412036 75.52%);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2rem;
+  border-radius: 0 0 20px 20px;
+}
+
+section {
+  padding: 0 19%;
+}
+
+.hero-text h5, .hero-text h1, .hero-text h4, .hero-text p {
+  color: white;
+}
+
+.hero-text h5, .principal-paso1-titulo, .principal-paso2-titulo, .principal-paso3-titulo, .principal-paso4-titulo {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.hero-text h1 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 90px;
+  line-height: 1;
+  margin: 0 0 45px;
+}
+
+.hero-text h4, .hero-text p, .principal-paso1-texto, .principal-paso2-texto, .principal-paso3-texto, .principal-paso3-texto1, .principal-paso4-texto {
+  font-size: 0.75rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.principal-primeros-pasos, .principal-div-primeros-pasos, .principal-pasos-parte1, .principal-pasos-parte2, .principal-paso1, .principal-paso2, .principal-paso3, .principal-paso4 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: var(--dl-space-space-threeunits);
+  width: 100%;
+}
+
+.principal-paso1-numero, .principal-paso2-numero, .principal-paso3-numero, .principal-paso4-numero {
+  color: var(--dl-color-gray-900);
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: -30px;
+}
+
+.principal-primeros-pasos-titulo {
+  color: var(--dl-color-gray-black);
+  font-size: 3rem;
+  margin-bottom: var(--dl-space-space-unit);
+}
+
+.principal-paso1-texto, .principal-paso2-texto, .principal-paso3-texto, .principal-paso3-texto1, .principal-paso4-texto {
+  color: var(--dl-color-gray-500);
+  margin-top: var(--dl-space-space-oneandhalfunits);
+}
+
+.principal-div-top-juegos, .principal-stats {
+  width: 100%;
+  padding: var(--dl-space-space-threeunits);
+  max-width: 1600px; 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.principal-stats {
+  display: grid;
+  grid-gap: var(--dl-space-space-twounits);
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+.principal-stat, .principal-stat1, .principal-stat2, .principal-stat3 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.principal-text082, .principal-text085, .principal-text088, .principal-text093 {
+  color: rgb(255, 124, 76);
+  font-size: 3rem;
+}
+
+
+.principal-text084, .principal-text087, .principal-text092, .principal-text095 {
+  color: var(--dl-color-gray-500);
+  font-size: 0.75rem;
+  margin-top: var(--dl-space-space-halfunit);
+  text-align: center;
+}
+
+
+.principal-text096, .principal-textinput, .principal-text {
+  font-size: 0.75rem;
+}
+
+.principal-text096 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: var(--dl-space-space-twounits);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.principal-textinput {
+  border-color: var(--dl-color-gray-500);
+}
+
+.principal-text {
+  text-align: center;
+}
+.has-scrollbar {
+  list-style-type: none;
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+}
+.scrollbar-item {
+  margin: 20px; 
+}
+.container {
+  text-align: center; 
+  width: 80%; 
+  margin: 0 auto; 
+}
+footer {
+  margin-top: 20px; 
+  padding: 20px; 
+}
+.principal-primeros-pasos {
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+}
+
+.principal-div-primeros-pasos {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around; 
+  width: 100%; 
+}
+
+.principal-pasos-parte1, .principal-pasos-parte2 {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around; 
+  width: 50%; 
+}
+
+.principal-paso1, .principal-paso2, .principal-paso3, .principal-paso4 {
+  width: 50%;
+  text-align: center;   
+}
+
+
+@media only screen and (max-width: 768px) {
+  .hero-img img{
+    width: 60%;
+    height: auto;
+    align-items: center;
+  }
+  .hero-text{
+    margin-top: 80px;
+  }
+
+
+  .hero{
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  
+ .hero-text p, .principal-paso1-texto, .principal-paso2-texto, .principal-paso3-texto, .principal-paso3-texto1, .principal-paso4-texto {
+    font-size: 0.65rem;
+  }
+  
+  .text_wrapper {
+    min-width: 200px;
+  }
+  
+  .bottom_wrapper {
+    flex-direction: column;
+  }
+  
+  #msg_input {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .app_button_1 {
+    width: 100%;
+  }
+  
+  .options-container {
+    flex-direction: column;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .hero-img{
+    width: 60%;
+    height: auto;
+    align-items: center;
+
+  }
+  .hero-text h1 {
+    font-size: 45px;
+    font-weight: 600;
+  }
+  .hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+  border-radius: 0%;
+  height: 100vh; 
+  }
+  .principal-primeros-pasos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    width: 100%;
+
+  }
+  .principal-primeros-pasos-titulo{
+    font-size: 2.0rem;
+
+  }
+  .principal-div-primeros-pasos{
+    display: flexbox;
+    flex-direction: column ;
+  }
+  .principal-pasos-parte1{
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .principal-paso1{
+    border-bottom: 0.5px solid gray;
+    margin: 0;
+    padding: 0;
+  }
+  .principal-paso1 span{
+    margin: 5px;
+    padding: 5px;
+  }
+  .principal-paso2{
+    border-bottom: 0.5px solid gray;
+    margin: 0;
+    padding: 0;
+  }
+  .principal-paso2 span{
+    margin: 5px;
+    padding: 5px;
+  }
+  .principal-pasos-parte2{
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .principal-paso3{
+    border-bottom: 0.5px solid gray;
+    margin: 0;
+    padding: 0;
+  }
+  .principal-paso3 span{
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  .principal-paso4{
+    border-bottom: 0.5px solid white;
+    margin: 0;
+    padding: 0;
+  }
+  .principal-paso4 span{
+    margin: 5px;
+    padding: 5px;
+  }
+  .principal-div-top-juegos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+    width: 100%;
+
+  }
+  .hero-text h4, .hero-text p{
+    font-size: 0.8rem;
+  }
+  
+  .text_wrapper {
+    min-width: 150px;
+  }
+  
+  .bottom_wrapper {
+    padding: 10px;
+  }
+  
+  #msg_input {
+    padding: 8px;
+  }
+
+  .app_button_1 {
+    padding: 8px;
+  }
+  
+  .principal-stat, .principal-stat1, .principal-stat2, .principal-stat3 {
+    width: 100%;
+    padding-bottom: 2px;
+  }
+  
+  .principal-stats {
+    grid-template-columns: 1fr;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .latest-game-card{
+    width: 100%;
+    max-width: 300px;
+    color: #0f141b;
+  }
+
+}
