@@ -273,8 +273,11 @@ function showAnswersInConsole() {
 	console.log("Recomendación 2: " + recomendaciones[1]);
 	console.log("Recomendación 3: " + recomendaciones[2]);
 	setTimeout(function () {
-		showBotMessage("Los videojuegos que te recomiendo son: " + recomendaciones.map(item => item.name).join(" / ") );
-	}, 2000);
+		showBotMessage("Los videojuegos que te recomiendo son: " + recomendaciones.map(item => item.name).join(",") + " puedes bajar para ver los juegos:)" );
+	}, 1000);
+	setTimeout(function() {
+        location.reload();
+    }, 6000);
 }
 
 
@@ -282,9 +285,19 @@ $(window).on('load', function () {
 	showBotMessage('Bienvenido :D');
 });
 $('#msg_input').on('keypress', function (e) {
-	if (e.which == 13) {  // Detecta la tecla Enter
-		$('#send_button').click();  // Simula un clic en el botón de enviar
-		return false;  // Previene la acción por defecto de la tecla Enter
+	if (e.which == 13) {  
+		$('#send_button').click();  
+		return false;  
 	}
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var heroImg = document.querySelector(".hero-img img");
+    if (heroImg) {
+        heroImg.style.transition = "opacity 2s";
+        heroImg.style.opacity = 0;
+setTimeout(function() {
+    heroImg.style.opacity = 1; 
+}, 1000);
+    }
+});

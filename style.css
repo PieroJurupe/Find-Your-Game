@@ -67,16 +67,6 @@
   margin-top: -2px;
 }
 
-.message.left .avatar {
-  float: left;
-  background: url("./img/bot.jpg");
-}
-
-.message.right .avatar {
-  float: right;
-  background: url("./img/guy.jpg");
-}
-
 .message.right .text_wrapper {
   background-color: #b0d4f3;
   margin-right: 20px;
