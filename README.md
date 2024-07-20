@@ -1,6 +1,6 @@
 ![FYG BANNER](https://github.com/user-attachments/assets/0797e147-7b90-4e3e-b8ac-6d7e173d2f4e)
 
-# ![mp](https://github.com/user-attachments/assets/53eae2f4-167b-441f-a88e-0a8dc07afb6b) Find-Your-Game
+# ![d (1)](https://github.com/user-attachments/assets/12302bd8-31d5-49e6-bb46-bb4a93a77c22) Find-Your-Game
 > Web project done in two hours as a challenge. 
 > Test GPT API in a small test that will give you recommended video games
 > Language project: Spanish
