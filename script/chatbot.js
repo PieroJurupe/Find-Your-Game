@@ -294,10 +294,13 @@ $('#msg_input').on('keypress', function (e) {
 document.addEventListener("DOMContentLoaded", function() {
     var heroImg = document.querySelector(".hero-img img");
     if (heroImg) {
-        heroImg.style.transition = "opacity 2s";
+        heroImg.style.transform = "translateX(100%)";
+        heroImg.style.transition = "transform 2s, opacity 2s";
         heroImg.style.opacity = 0;
-setTimeout(function() {
-    heroImg.style.opacity = 1; 
-}, 1000);
+
+        setTimeout(function() {
+            heroImg.style.transform = "translateX(0)";
+            heroImg.style.opacity = 1;
+        }, 2000);
     }
 });
